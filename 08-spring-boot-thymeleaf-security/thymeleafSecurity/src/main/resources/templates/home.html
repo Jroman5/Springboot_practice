@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>
+        Hello World!
+    </h3>
+    User: <span sec:authentication="principal.username"></span>
+    Roles: <span sec:authentication="principal.authorities"></span>
+
+
+    <div sec:authorize="hasRole('MANAGER')">
+        <p>
+
+            <a th:href="@{/leaders}"> Leadership Meeting</a>
+            (Only for manager peeps)
+        </p>
+
+    </div>
+    
+    
+    <div sec:authorize="hasRole('ADMIN')">
+        <p>
+
+            <a th:href="@{/systems}"> Enter the Matrix</a>
+            (System Admins Only)
+        </p>
+    
+
+    </div>
+
+    
+
+
+
+    <form action="#" th:action="@{/logout}" method="POST">
+        <input type="submit" value="Logout"> 
+    </form>
+
+    
+</body>
+</html>
