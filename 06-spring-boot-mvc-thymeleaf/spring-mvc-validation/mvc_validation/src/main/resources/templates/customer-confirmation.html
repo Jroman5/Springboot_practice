@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+</head>
+<body>
+    <h3>Customer confirmation</h3>
+
+    Customer confirmed: <span th:text="${customer.firstName} + ' ' + ${customer.lastName} + ' free Passes: ' + ${customer.freePasses} + ' ' + ${customer.postalCode} + ' ' + ${customer.courseCode}" >
+
+    <!-- <form th:action="@{/processForm}" th:object="${customer}" method="POST">
+        firstName: <input type="text"  th:field="*{firstName}" name="firstName" placeholder="firstName"/> <br><br>
+        lastName: <input type="text"  th:field="${customer.lastName}" name="lastName" placeholder="LastName"/>
+        <input type="submit"/>
+    </form> -->
+    
+</body>
+</html>
